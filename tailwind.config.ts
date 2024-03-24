@@ -7,7 +7,12 @@ const config: Config = {
     "./modules/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        "color-dark": "var(--color-dark)",
+        "color-page": "var(--color-page)",
+      },
+    },
   },
   plugins: [],
 };

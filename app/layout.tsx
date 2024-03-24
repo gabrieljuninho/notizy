@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { ReactNode } from "react";
-import { Inter } from "next/font/google";
+
+import { cn } from "@/common/libs/cn";
+
+import { fontSans } from "@/common/styles/fonts";
 
 import "./globals.css";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -17,8 +18,18 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html
+      lang="en"
+      className="bg-color-page text-color-dark font-sans text-base leading-normal"
+    >
+      <body
+        className={cn(
+          "bg-color-page text-color-dark font-sans text-base leading-normal",
+          fontSans.variable,
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
